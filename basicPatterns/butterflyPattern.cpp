@@ -11,9 +11,12 @@ int main(){
         for(int j=1; j<=i; j++){
             cout<<"*";
         }
-        for(int j=(n*2)-(i*2); j>0; j--){
+
+        int space=2*n - 2*i;
+        for(int j=1; j<=space; j++){
             cout<<" ";
         }
+
         for(int j=1; j<=i; j++){
             cout<<"*";
         }
@@ -26,7 +29,9 @@ int main(){
         for(int j=1; j<=i; j++){
             cout<<"*";
         }
-        for(int j=1; j<=(n-i)*2; j++){
+        
+        int space=2*n - 2*i;
+        for(int j=1; j<=space; j++){
             cout<<" ";
         }
        for(int j=1; j<=i; j++){
