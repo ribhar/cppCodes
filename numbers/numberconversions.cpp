@@ -1,22 +1,23 @@
 #include<iostream>
 using namespace std;
 
-int decimalToBinary(int n){
-    int x = 1, ans=0;
+int binaryToDecimal(int n){
+    int basePower=1, // 2 as base, initial power is 0, 2^0 for starting hence 2^0 is 1.
+    covertedNumber=0;
 
     while(n>0){
-        int y = n%10;
-        ans += x*y;
-        x *= 2;
-        n /=10;
+        int lastDigit = n%10;
+        covertedNumber +=  lastDigit*basePower; // Last digit * 2^power, eg: 1*2^2 | 1*4, 1*2^6 | 1*64.
+        basePower *= 2; // Increse power of base 2, eg 2*2*.......2 .
+        n /= 10;  // Remove one digit from last.
     }
-    return ans;
+    return covertedNumber;
 
 }
 int main(){
     int n;
     cin>> n;
 
-    cout<< decimalToBinary(n)<<endl;
+    cout<< binaryToDecimal(n)<<endl;
     return 0;
 }
