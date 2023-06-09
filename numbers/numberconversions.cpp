@@ -151,7 +151,6 @@ int main()
 {
     int n;
     cin >> n;
-
     // cout<<"Binary "<<n<<" in decimal is "<<binaryToDecimal(n)<<endl;
     // cout<<"Octal "<<n<<" in decimal is "<< octalToDecimal(n)<<endl;
     // cout << "Hexadecimal " << n << " in decimal is " << hexadecimalToDecimal(n) << endl;
