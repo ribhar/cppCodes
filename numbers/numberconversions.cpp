@@ -102,6 +102,9 @@ int hexadecimalToDecimal(string n)
 
 string decimalToHexadecimal(int n)
 {
+    if(n ==0){
+        return "0";
+    }
     int highestPower = 1; 
     string convertedNumber = "";
 
@@ -119,32 +122,35 @@ string decimalToHexadecimal(int n)
         highestPower /= 16;               //  Move to lower power.
         
            // Convert the quotient to its hexadecimal representation.
-        switch (quotient)
-        {
-            case 10:
-                convertedNumber += 'A';
-                break;
-            case 11:
-                convertedNumber += 'B';
-                break;
-            case 12:
-                convertedNumber += 'C';
-                break;
-            case 13:
-                convertedNumber += 'D';
-                break;
-            case 14:
-                convertedNumber += 'E';
-                break;
-            case 15:
-                convertedNumber += 'F';
-                break;
-            default:
-                convertedNumber += to_string(quotient);
-                break;
-        }  
+        if (quotient >= 10) {
+                convertedNumber += 'A' + (quotient - 10);
+            } else {
+                convertedNumber += '0' + quotient;
+            }
+            highestPower /= 16;  
     }
     return convertedNumber;
+}
+
+
+string decimalToHexadecimal2(int num)
+{
+    if (num == 0) {
+            return "0";
+        }
+        
+        string hexChars = "0123456789abcdef";
+        string convertedStr = "";
+        
+        unsigned int unsignedNum = num;
+        
+        while (unsignedNum != 0) {
+            int digit = unsignedNum % 16;
+            convertedStr = hexChars[digit] + convertedStr;
+            unsignedNum /= 16;
+        }
+        
+        return convertedStr;
 }
 
 int main()
@@ -156,6 +162,7 @@ int main()
     // cout << "Hexadecimal " << n << " in decimal is " << hexadecimalToDecimal(n) << endl;
     // cout << "Decimal " << n << " in binary is " << decimalToBinary(n) << endl;
     // cout << "Decimal " << n << " in octal is " << decimalToOctal(n) << endl;
-    cout << "Decimal " << n << " in hexadecimal is " << decimalToHexadecimal(n) << endl;
+    // cout << "Decimal " << n << " in hexadecimal is " << decimalToHexadecimal(n) << endl;
+    cout << "Decimal " << n << " in hexadecimal is " <<  decimalToHexadecimal2(n) << endl;
     return 0;
 }
