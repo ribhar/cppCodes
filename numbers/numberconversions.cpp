@@ -149,7 +149,6 @@ string decimalToHexadecimal2(int num)
             convertedStr = hexChars[digit] + convertedStr;
             unsignedNum /= 16;
         }
-        
         return convertedStr;
 }
 
