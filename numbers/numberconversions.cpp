@@ -10,8 +10,8 @@ int binaryToDecimal(int n)
     {
         int lastDigit = n % 10;
         convertedNumber += lastDigit * basePower; // Last digit * 2^power, eg: 1*2^2 | 1*4, 1*2^6 | 1*64.
-        basePower *= 2;                          // Increse power of base 2, eg 2*2*.......2 .
-        n /= 10;                                 // Remove one digit from last.
+        basePower *= 2;                           // Increse power of base 2, eg 2*2*.......2 .
+        n /= 10;                                  // Remove one digit from last.
     }
     return convertedNumber;
 }
@@ -45,12 +45,11 @@ int octalToDecimal(int n)
     {
         int lastDigit = n % 10;
         convertedNumber += lastDigit * basePower; // Last digit * 2^power, eg: 1*8^2 | 1*64, 1*8^3 | 1*512.
-        basePower *= 8;                          // Increse power of base 8, eg 8*8*.......8 .
-        n /= 10;                                 // Remove one digit from last.
+        basePower *= 8;                           // Increse power of base 8, eg 8*8*.......8 .
+        n /= 10;                                  // Remove one digit from last.
     }
     return convertedNumber;
 }
-
 
 int decimalToOctal(int n)
 {
@@ -71,7 +70,6 @@ int decimalToOctal(int n)
     }
     return convertedNumber;
 }
-
 
 int hexadecimalToDecimal(string n)
 {
@@ -99,13 +97,13 @@ int hexadecimalToDecimal(string n)
     return convertedNumber;
 }
 
-
 string decimalToHexadecimal(int n)
 {
-    if(n ==0){
+    if (n == 0)
+    {
         return "0";
     }
-    int highestPower = 1; 
+    int highestPower = 1;
     string convertedNumber = "";
 
     while (highestPower <= n)
@@ -114,42 +112,45 @@ string decimalToHexadecimal(int n)
     }
     highestPower /= 16; // Adjust highest power to the correct value.
 
-
     while (highestPower > 0)
     {
         int quotient = n / highestPower; // Get qoutiant.
         n -= quotient * highestPower;    // Subtract highest power's representation from n.
-        highestPower /= 16;               //  Move to lower power.
-        
-           // Convert the quotient to its hexadecimal representation.
-        if (quotient >= 10) {
-                convertedNumber += 'A' + (quotient - 10);
-            } else {
-                convertedNumber += '0' + quotient;
-            }
-            highestPower /= 16;  
+        highestPower /= 16;              //  Move to lower power.
+
+        // Convert the quotient to its hexadecimal representation.
+        if (quotient >= 10)
+        {
+            convertedNumber += 'A' + (quotient - 10);
+        }
+        else
+        {
+            convertedNumber += '0' + quotient;
+        }
+        highestPower /= 16;
     }
     return convertedNumber;
 }
 
-
 string decimalToHexadecimal2(int num)
 {
-    if (num == 0) {
-            return "0";
-        }
-        
-        string hexChars = "0123456789abcdef";
-        string convertedStr = "";
-        
-        unsigned int unsignedNum = num;
-        
-        while (unsignedNum != 0) {
-            int digit = unsignedNum % 16;
-            convertedStr = hexChars[digit] + convertedStr;
-            unsignedNum /= 16;
-        }
-        return convertedStr;
+    if (num == 0)
+    {
+        return "0";
+    }
+
+    string hexChars = "0123456789abcdef";
+    string convertedStr = "";
+
+    unsigned int unsignedNum = num;
+
+    while (unsignedNum != 0)
+    {
+        int digit = unsignedNum % 16;
+        convertedStr = hexChars[digit] + convertedStr;
+        unsignedNum /= 16;
+    }
+    return convertedStr;
 }
 
 int main()
@@ -162,6 +163,6 @@ int main()
     // cout << "Decimal " << n << " in binary is " << decimalToBinary(n) << endl;
     // cout << "Decimal " << n << " in octal is " << decimalToOctal(n) << endl;
     // cout << "Decimal " << n << " in hexadecimal is " << decimalToHexadecimal(n) << endl;
-    cout << "Decimal " << n << " in hexadecimal is " <<  decimalToHexadecimal2(n) << endl;
+    cout << "Decimal " << n << " in hexadecimal is " << decimalToHexadecimal2(n) << endl;
     return 0;
 }

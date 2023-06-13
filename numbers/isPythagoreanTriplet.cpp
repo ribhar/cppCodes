@@ -1,32 +1,41 @@
 #include <iostream>
 using namespace std;
 
-bool check(int x,int y, int z){
-    int a = max(x, max(y,z));
+bool check(int x, int y, int z)
+{
+    int a = max(x, max(y, z));
 
-    int b,c;
+    int b, c;
 
-    if(a == x){
-        b=y,c=z;
-    }else if(a==y){
-        b=x,c=z;
-    }else{
-        b=x,c=y;
+    if (a == x)
+    {
+        b = y, c = z;
+    }
+    else if (a == y)
+    {
+        b = x, c = z;
+    }
+    else
+    {
+        b = x, c = y;
     }
 
-    if(a*a==b*b+c*c){
+    if (a * a == b * b + c * c)
+    {
         return true;
-    }else{
+    }
+    else
+    {
         return false;
-    } 
-
+    }
 }
 
-int main(){
-    int x,y,z;
-    cin>>x>>y>>z;
+int main()
+{
+    int x, y, z;
+    cin >> x >> y >> z;
 
-    check(x,y,z)? cout<<"Pythgorean triplet":cout<<"Not a pythagorean triplet";
+    check(x, y, z) ? cout << "Pythgorean triplet" : cout << "Not a pythagorean triplet";
 
     return 0;
 }
