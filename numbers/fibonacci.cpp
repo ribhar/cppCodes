@@ -27,3 +27,20 @@ int main()
 
     return 0;
 }
+
+
+int fib2(int n){
+    if( n == 0 || n == 1){
+        return n;
+    }
+
+    return fib2(n-1) + fib2(n-2);
+}
+
+int main2(){
+
+    int n;
+    cin>>n;
+    cout << fib2(n);
+    return 0;
+}
