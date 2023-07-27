@@ -1,0 +1,1 @@
+{"name":"Local: maxMin","url":"d:\\Ritik Bhardwaj\\cppCodes\\arrays\\maxMin.cpp","tests":[{"id":1690441219369,"input":"5\n10 20 30 40 50","output":""},{"id":1690441715546,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Ritik Bhardwaj\\cppCodes\\arrays\\maxMin.cpp","group":"local","local":true}
