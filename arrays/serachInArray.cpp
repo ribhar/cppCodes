@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int findIndexlinearSearch(int arr[], int n, int key){
@@ -45,6 +46,7 @@ int main(){
     int key;
     cin>>key;
 
-    cout << findIndexlinearSearch(arr, n, key);
+    cout << findIndexlinearSearch(arr, n, key)<< endl;
+    cout << findIndexBinarySearch(arr, n, key)<< endl; // for sorted arrays only.
     return 0;
 }
